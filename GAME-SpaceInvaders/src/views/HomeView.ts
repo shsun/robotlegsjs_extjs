@@ -66,13 +66,15 @@ export class HomeView extends Container {
         optionButton.addEventListener('click', this.optionsButton_onClick, this);
     }
 
-    private startButton_onClick(e: any, ...restOfArgs): void {
+    private startButton_onClick(e: any, ...restOfArgs:Object[]): void {
         console.log('HomeView.startButton_onClick-s');
 
         console.log('HomeView.startButton_onClick-s' + e);
 
 
         console.log('HomeView.startButton_onClick-s---' + restOfArgs.length);
+
+        console.log('HomeView.startButton_onClick-s---' + JSON.stringify(restOfArgs[0]));
 
 
         var data: Object = {};

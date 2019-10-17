@@ -8,6 +8,7 @@ import {HomeView} from "./../views/HomeView";
 
 import {StrangeSignal} from "../event/BSignals";
 import {CustomEvent} from "../event/BEvents";
+import {Delegate} from "../utils/Delegate";
 
 @injectable()
 export class HomeViewMediator extends SignalMediator<HomeView> {
@@ -22,7 +23,8 @@ export class HomeViewMediator extends SignalMediator<HomeView> {
         // this.eventMap.mapListener(this.view.startButton, "click", this.startButton_onClick, this);
         //this.eventMap.mapListener(this.view.optionButton, "click", this.optionsButton_onClick, this);
 
-        this.view.signal4Start.add(this._onStartGame);
+
+        this.view.signal4Start.add(Delegate.create(this, this._onStartGame, {'a':'123', 'b':'456', 'c':2}));
         this.view.signal4Option.add(this.optionsButton_onClick);
 
         //this.addToSignal(this.strangeSignal, this._onStartGame)
@@ -53,6 +55,10 @@ export class HomeViewMediator extends SignalMediator<HomeView> {
         console.log('_onStartGame-s');
         console.log(JSON.stringify(data));
         console.log(restArgs.length);
+
+        console.log(JSON.stringify(restArgs[0]));
+
+
         console.log('_onStartGame-e');
         this.flowService.setGameView();
     }
