@@ -71,6 +71,7 @@ export class HomeView extends Container {
 
         console.log('HomeView.startButton_onClick-s' + e);
 
+        var sender:CustomButton = e.target as CustomButton;
 
         //console.log('HomeView.startButton_onClick-s---' + restOfArgs.length);
 
