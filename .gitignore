@@ -1,3 +1,4 @@
+
 xci/venv
 */venv
 */.git
@@ -27,6 +28,8 @@ __foo__.*
 
 node_modules
 **/node_modules
+package-lock.json
+**/package-lock.json
 
 *.idea/
 *.iml
