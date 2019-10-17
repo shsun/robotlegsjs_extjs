@@ -20,9 +20,10 @@ export class HomeViewMediator extends SignalMediator<HomeView> {
 
     public initialize(): void {
         // this.eventMap.mapListener(this.view.startButton, "click", this.startButton_onClick, this);
-        this.eventMap.mapListener(this.view.optionButton, "click", this.optionsButton_onClick, this);
+        //this.eventMap.mapListener(this.view.optionButton, "click", this.optionsButton_onClick, this);
 
         this.view.signal4Start.add(this._onStartGame);
+        this.view.signal4Option.add(this.optionsButton_onClick);
 
         //this.addToSignal(this.strangeSignal, this._onStartGame)
 
@@ -44,6 +45,7 @@ export class HomeViewMediator extends SignalMediator<HomeView> {
     }
 
     private optionsButton_onClick(e: any): void {
+        console.log(e.toString());
         this.flowService.setOptionsView();
     }
 
