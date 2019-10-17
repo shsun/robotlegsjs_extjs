@@ -1,0 +1,4 @@
+export CHROMIUM_BIN=/usr/bin/chromium
+
+"pretest": "node_modules/.bin/webpack",
+"test": "node_modules/.bin/karma start"

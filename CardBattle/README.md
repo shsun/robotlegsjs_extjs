@@ -1,0 +1,3 @@
+# CardBattle
+## Setup
+npm i
