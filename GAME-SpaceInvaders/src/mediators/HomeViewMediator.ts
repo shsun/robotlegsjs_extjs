@@ -6,7 +6,7 @@ import {FlowService} from "./../services/FlowService";
 import {HomeView} from "./../views/HomeView";
 
 
-import {StrangeSignal} from "../event/BSignal";
+import {StrangeSignal} from "../event/BSignals";
 import {CustomEvent} from "../event/BEvents";
 
 @injectable()
