@@ -8,15 +8,14 @@ export class Delegate {
      */
     public static create(scope: any, method: Function, ...restOfArgs: Object[]): Function {
         var f: Function = function (...args: Object[]): any {
-            var s: any = f["s"];
-            var m: Function = f["m"];
-            var a: Array<any> = [].concat(args, f["a"]);
-            //var a: any = [].concat(args, f["a"]);
+            var s: any = f["__scope__"];
+            var m: Function = f["__method__"];
+            var a: Array<any> = [].concat(args, f["__restOfArgs__"]);
             return m.apply(s, a);
         };
-        f["s"] = scope;
-        f["m"] = method;
-        f["a"] = restOfArgs;
+        f["__scope__"] = scope;
+        f["__method__"] = method;
+        f["__restOfArgs__"] = restOfArgs;
         return f;
     }
 }
