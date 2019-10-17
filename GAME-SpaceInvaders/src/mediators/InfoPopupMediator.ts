@@ -1,11 +1,11 @@
 import { inject, injectable } from "@robotlegsjs/core";
 import { Mediator } from "@robotlegsjs/pixi";
-
+import {SignalMediator} from "@robotlegsjs/pixi-signalmediator";
 import { FlowService } from "./../services/FlowService";
 import { InfoPopup } from "./../views/InfoPopup";
 
 @injectable()
-export class InfoPopupMediator extends Mediator<InfoPopup> {
+export class InfoPopupMediator extends SignalMediator<InfoPopup> {
     @inject(FlowService) private service: FlowService;
 
     public initialize(): void {

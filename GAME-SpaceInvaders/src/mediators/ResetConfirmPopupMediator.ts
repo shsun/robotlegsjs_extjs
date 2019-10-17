@@ -1,11 +1,11 @@
 import { inject, injectable } from "@robotlegsjs/core";
 import { Mediator } from "@robotlegsjs/pixi";
-
+import {SignalMediator} from "@robotlegsjs/pixi-signalmediator";
 import { FlowService } from "./../services/FlowService";
 import { ResetConfirmPopup } from "./../views/ResetConfirmPopup";
 
 @injectable()
-export class ResetConfirmPopupMediator extends Mediator<ResetConfirmPopup> {
+export class ResetConfirmPopupMediator extends SignalMediator<ResetConfirmPopup> {
     @inject(FlowService) private flowService: FlowService;
 
     public initialize(): void {

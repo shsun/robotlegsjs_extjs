@@ -11,7 +11,6 @@ import {CustomEvent} from "../event/BEvents";
 
 @injectable()
 export class HomeViewMediator extends SignalMediator<HomeView> {
-//export class HomeViewMediator extends Mediator<HomeView> {
 
     // @inject(StrangeSignal)
     // private strangeSignal: StrangeSignal;

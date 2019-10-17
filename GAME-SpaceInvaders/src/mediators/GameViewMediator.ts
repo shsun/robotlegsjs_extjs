@@ -2,10 +2,12 @@ import { GameService } from "./../services/GameService";
 import { GameView } from "./../views/GameView";
 
 import { Mediator } from "@robotlegsjs/pixi";
+import {SignalMediator} from "@robotlegsjs/pixi-signalmediator";
+
 import { inject, injectable } from "@robotlegsjs/core";
 
 @injectable()
-export class GameViewMediator extends Mediator<GameView> {
+export class GameViewMediator extends SignalMediator<GameView> {
     @inject(GameService) private gameService: GameService;
 
     public initialize(): void {
