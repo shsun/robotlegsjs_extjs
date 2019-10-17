@@ -1,13 +1,5 @@
 import {Container, Sprite} from "pixi.js";
-
 import {Signal, OnceSignal} from "@robotlegsjs/signals";
-
-// import {Signal, OnceSignal} from "@robotlegsjs/core";
-// import EventDelegate, { GenericEventListener } from "@robotlegsjs/macrobot";
-//
-// import EventDelegate, { GenericEventListener } from "@utils/EventDelegate";
-
-
 import {AtlasKeys} from "./../utils/AtlasKeys";
 import {PixiFactory} from "./../utils/PixiFactory";
 import {ViewPortSize} from "./../utils/ViewPortSize";
@@ -55,7 +47,6 @@ export class HomeView extends Container {
         startButton.y = ViewPortSize.MAX_HEIGHT * 0.7;
         this.addChild(startButton);
         startButton.addEventListener('click', Delegate.create(this, this.startButton_onClick, {'a':'123', 'b':'456'}));
-
         //startButton.addEventListener('click', this.startButton_onClick, this);
 
         //
@@ -84,7 +75,7 @@ export class HomeView extends Container {
         this.signal4Start.dispatch(data);
     }
 
-    private optionsButton_onClick(e: any): void {
+    private optionsButton_onClick(e: MouseEvent, additionalOpts:Object): void {
         var data: Object = {};
         //data['e'] = e;
         data['a'] = 'optionsButton_onClick';
