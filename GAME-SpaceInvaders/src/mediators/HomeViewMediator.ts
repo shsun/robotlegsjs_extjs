@@ -10,13 +10,14 @@ import {StrangeSignal} from "../event/BSignals";
 import {CustomEvent} from "../event/BEvents";
 
 @injectable()
-//export class HomeViewMediator extends SignalMediator<HomeView> {
-export class HomeViewMediator extends Mediator<HomeView> {
+export class HomeViewMediator extends SignalMediator<HomeView> {
+//export class HomeViewMediator extends Mediator<HomeView> {
 
     // @inject(StrangeSignal)
     // private strangeSignal: StrangeSignal;
 
-    @inject(FlowService) private flowService: FlowService;
+    @inject(FlowService)
+    private flowService: FlowService;
 
     public initialize(): void {
         this.eventMap.mapListener(this.view.startButton, "click", this.startButton_onClick, this);
