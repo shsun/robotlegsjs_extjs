@@ -2,35 +2,29 @@ import {Container, Sprite} from "pixi.js";
 
 import {Signal, OnceSignal} from "@robotlegsjs/signals";
 
+// import {Signal, OnceSignal} from "@robotlegsjs/core";
+// import EventDelegate, { GenericEventListener } from "@robotlegsjs/macrobot";
+//
+// import EventDelegate, { GenericEventListener } from "@utils/EventDelegate";
+
 
 import {AtlasKeys} from "./../utils/AtlasKeys";
 import {PixiFactory} from "./../utils/PixiFactory";
 import {ViewPortSize} from "./../utils/ViewPortSize";
 import {CustomButton} from "./components/CustomButton";
+import {Delegate} from "../utils/Delegate";
 
 export class HomeView extends Container {
 
-
-    public signal4Start: Signal = new Signal(Object);
-    public signal4Option: Signal = new Signal(Object);
-
-    //private startButton: CustomButton;
-
-    /*
-    public get startButton(): CustomButton {
-        return startButton;
-    }
-    */
-
-    /*
-    private optionButton: CustomButton;
-    public get optionButton(): CustomButton {
-        return optionButton;
-    }
-    */
+    public signal4Start: Signal;
+    public signal4Option: Signal;
 
     constructor() {
         super();
+
+        this.signal4Start = new Signal(Object);
+        this.signal4Option = new Signal(Object);
+
 
         this.setupBackground();
         this.setupImages();
@@ -56,21 +50,31 @@ export class HomeView extends Container {
     }
 
     private setupButtons(): void {
-        var startButton:CustomButton = PixiFactory.getButton(AtlasKeys.BUTTON_START);
+        var startButton: CustomButton = PixiFactory.getButton(AtlasKeys.BUTTON_START);
         startButton.x = ViewPortSize.HALF_WIDTH;
         startButton.y = ViewPortSize.MAX_HEIGHT * 0.7;
         this.addChild(startButton);
-        startButton.addEventListener('click', this.startButton_onClick, this);
+        startButton.addEventListener('click', Delegate.create(this.startButton_onClick, {'a':'123', 'b':'456'}));
+
+        //startButton.addEventListener('click', this.startButton_onClick, this);
 
         //
-        var optionButton:CustomButton = PixiFactory.getButton(AtlasKeys.BUTTON_CONFIG);
+        var optionButton: CustomButton = PixiFactory.getButton(AtlasKeys.BUTTON_CONFIG);
         optionButton.x = ViewPortSize.HALF_WIDTH;
         optionButton.y = ViewPortSize.MAX_HEIGHT * 0.8;
         this.addChild(optionButton);
         optionButton.addEventListener('click', this.optionsButton_onClick, this);
     }
 
-    private startButton_onClick(e: any): void {
+    private startButton_onClick(e: any, ...restOfArgs): void {
+        console.log('HomeView.startButton_onClick-s');
+
+        console.log('HomeView.startButton_onClick-s' + e);
+
+
+        console.log('HomeView.startButton_onClick-s---' + restOfArgs.length);
+
+
         var data: Object = {};
         //data['e'] = e;
         data['a'] = 'startButton_onClick';
