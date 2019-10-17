@@ -1,3 +1,6 @@
+/**
+ * @Author sh
+ */
 export class Delegate {
 
     /**
