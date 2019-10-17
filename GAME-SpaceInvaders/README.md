@@ -1,26 +1,26 @@
-![cover](img_cover_space_invaders.png)
+![cover](media/img_cover_space_invaders_ts.png)
 
-In this repository, you will find the source of the game Space Invaders, developed in some different programming languages such as Actionscript and TypeScript, following the micro architecture Robotlegs.
+This is a TypeScript open-source game which is a port of the ActionScript version, following the same concepts, graphics, and architecture.
 
-### Status
-
-+ **[ActionScript/Starling](https://ronaldosetzer.github.io/portfolio/open_source/space_invaders_as/) :** Done
-+ **Haxe/OpenFl:** in Progress.
-+ **[TypeScript/PixiJs](https://ronaldosetzer.github.io/portfolio/open_source/space_invaders_ts/) :** Done
-+ **C#/Unity:** to do.
-
++ **Category:** Arcade.
++ **Platform:** Web.
++ **Language:** TypeScript.
++ **Technologies:** PixiJs, RobotlegsJS, RobotlegsJS-Pixi, RobotlegsJS-Pixi-Palidor.
 
 * * *
 
-### Gameplay ActionScript
+### Gameplay
 
-![gif_as](gif_space_invaders_as_demo.gif)
+![gif_ts](media/gif_space_invaders_ts_demo.gif)
 
 * * *
 
-### Gameplay TypeScript
+### Dependencies
 
-![gif_ts](gif_space_invaders_ts_demo.gif)
++ [PixiJS](http://www.pixijs.com/)
++ [RobotlegsJS](https://github.com/RobotlegsJS/RobotlegsJS)
++ [RobotlegsJS-Pixi](https://github.com/RobotlegsJS/RobotlegsJS-Pixi)
++ [RobotlegsJS-Pixi-Palidor](https://github.com/RobotlegsJS/RobotlegsJS-Pixi-Palidor)
 
 * * *
 
@@ -30,9 +30,16 @@ In this repository, you will find the source of the game Space Invaders, develop
 
 * * *
 
-### Screenshots
-![screenshot01](img_game_space_invaders.png)
+### Game
 
+#### Game Flow
+
+![screenshot01](media/img_ss_space_invaders_ts_01.png)
+
+* * *
+
+### Screenshots
+![screenshot01](media/img_game_space_invaders_ts.png)
 * * *
 
 **Ronaldo Santiago**  - Game Developer [ [portfolio](https://ronaldosetzer.github.io/portfolio/) ]
