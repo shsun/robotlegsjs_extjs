@@ -72,14 +72,14 @@ export class HomeView extends Container {
 
     private startButton_onClick(e: any): void {
         var data: Object = {};
-        data['e'] = e;
+        //data['e'] = e;
         data['a'] = 'startButton_onClick';
         this.signal4Start.dispatch(data);
     }
 
     private optionsButton_onClick(e: any): void {
         var data: Object = {};
-        data['e'] = e;
+        //data['e'] = e;
         data['a'] = 'optionsButton_onClick';
         this.signal4Option.dispatch(data);
     }
