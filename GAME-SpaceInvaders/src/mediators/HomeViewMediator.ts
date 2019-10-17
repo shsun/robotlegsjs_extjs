@@ -19,11 +19,12 @@ export class HomeViewMediator extends SignalMediator<HomeView> {
     private flowService: FlowService;
 
     public initialize(): void {
-        this.eventMap.mapListener(this.view.startButton, "click", this.startButton_onClick, this);
+        // this.eventMap.mapListener(this.view.startButton, "click", this.startButton_onClick, this);
         this.eventMap.mapListener(this.view.optionButton, "click", this.optionsButton_onClick, this);
 
+        this.view.signal4Start.add(this._onStartGame);
 
-        //this.addToSignal(this.strangeSignal, this.onStrangeSignal)
+        //this.addToSignal(this.strangeSignal, this._onStartGame)
 
     }
 
@@ -46,7 +47,9 @@ export class HomeViewMediator extends SignalMediator<HomeView> {
         this.flowService.setOptionsView();
     }
 
-    onStrangeSignal = (data: string) => {
-        console.log(data);
+    _onStartGame = (data: Object) => {
+        console.log(data.toString());
+        this.flowService.setGameView();
+
     }
 }
