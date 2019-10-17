@@ -2,25 +2,61 @@
 # yarn lockfile v1
 
 
-"@robotlegsjs/core@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@robotlegsjs/core/-/core-0.1.1.tgz#7522c7481d12c562ab41e6b6653235cf76bafaf4"
+"@robotlegsjs/core@1.0.2", "@robotlegsjs/core@^1.0.0", "@robotlegsjs/core@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/@robotlegsjs/core/download/@robotlegsjs/core-1.0.2.tgz#084aa26bbea00b9659bc11dae3e1925f25210c9f"
+  integrity sha1-CEqia76gC5ZZvBHa4+GSXyUhDJ8=
   dependencies:
-    inversify "^4.5.1"
+    inversify "^5.0.1"
+    tslib "^1.10.0"
 
-"@robotlegsjs/pixi-palidor@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@robotlegsjs/pixi-palidor/-/pixi-palidor-0.1.1.tgz#e5311476a754969fa4f85bebf684b8915d9ddb02"
+"@robotlegsjs/macrobot@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/@robotlegsjs/macrobot/download/@robotlegsjs/macrobot-1.0.2.tgz#d0588d1fea52dee577b568ea9c09069675f152cc"
+  integrity sha1-0FiNH+pS3uV3tWjqnAkGlnXxUsw=
   dependencies:
-    "@robotlegsjs/pixi" "^0.1.2"
+    "@robotlegsjs/core" "^1.0.1"
+    tslib "^1.9.3"
 
-"@robotlegsjs/pixi@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@robotlegsjs/pixi/-/pixi-0.1.2.tgz#6e0a0d67940503ed8e6ef4a62a72e195a3ecbff0"
+"@robotlegsjs/pixi-palidor@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/@robotlegsjs/pixi-palidor/download/@robotlegsjs/pixi-palidor-1.0.0.tgz#980b4be23c6852bbc8fb65ed299f1b790fa6ad43"
+  integrity sha1-mAtL4jxoUrvI+2XtKZ8beQ+mrUM=
   dependencies:
-    "@robotlegsjs/core" "^0.1.1"
-    eventemitter3 "^2.0.3"
-    pixi.js "^4.6.1"
+    "@robotlegsjs/pixi" "^1.0.0"
+    tslib "^1.9.3"
+
+"@robotlegsjs/pixi-signalmediator@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/@robotlegsjs/pixi-signalmediator/download/@robotlegsjs/pixi-signalmediator-1.0.0.tgz#182f2ae2d07c1a4e4dc727d61415ffb188297977"
+  integrity sha1-GC8q4tB8Gk5NxyfWFBX/sYgpeXc=
+  dependencies:
+    "@robotlegsjs/pixi" "^1.0.0"
+    "@robotlegsjs/signals" "^1.0.0"
+    tslib "^1.9.3"
+
+"@robotlegsjs/pixi@1.0.0", "@robotlegsjs/pixi@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/@robotlegsjs/pixi/download/@robotlegsjs/pixi-1.0.0.tgz#51bbd021beb09721bc02f41e79105a726273af71"
+  integrity sha1-UbvQIb6wlyG8AvQeeRBacmJzr3E=
+  dependencies:
+    "@robotlegsjs/core" "^1.0.0"
+    tslib "^1.9.3"
+
+"@robotlegsjs/signalcommandmap@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/@robotlegsjs/signalcommandmap/download/@robotlegsjs/signalcommandmap-1.0.1.tgz#e961f8d74c827c24d58874827546f1088307a4dc"
+  integrity sha1-6WH410yCfCTViHSCdUbxCIMHpNw=
+  dependencies:
+    "@robotlegsjs/core" "^1.0.1"
+    "@robotlegsjs/signals" "^1.0.1"
+
+"@robotlegsjs/signals@1.0.2", "@robotlegsjs/signals@^1.0.0", "@robotlegsjs/signals@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/@robotlegsjs/signals/download/@robotlegsjs/signals-1.0.2.tgz#bbfd4dfe3c1fc9917a1051f5808d2aa05fed72f7"
+  integrity sha1-u/1N/jwfyZF6EFH1gI0qoF/tcvc=
+  dependencies:
+    tslib "^1.10.0"
 
 "@types/pixi.js@^4.6.0":
   version "4.6.0"
@@ -54,6 +90,11 @@ acorn@^5.0.0:
 ajv-keywords@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.0.tgz#a296e17f7bfae7c1ce4f7e0de53d29cb32162df0"
+
+ajv-keywords@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.npm.taobao.org/ajv-keywords/download/ajv-keywords-3.4.1.tgz#ef916e271c64ac12171fd8384eaae6b2345854da"
+  integrity sha1-75FuJxxkrBIXH9g4TqrmsjRYVNo=
 
 ajv@^4.9.1:
   version "4.11.8"
@@ -809,9 +850,10 @@ domutils@1.5.1:
     dom-serializer "0"
     domelementtype "1"
 
-earcut@^2.0.7:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/earcut/-/earcut-2.1.1.tgz#157634e5f3ebb42224e475016e86a5b6ce556b45"
+earcut@^2.1.4:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/earcut/download/earcut-2.2.1.tgz#3bae0b1b6fec41853b56b126f03a42a34b28f1d5"
+  integrity sha1-O64LG2/sQYU7VrEm8DpCo0so8dU=
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"
@@ -985,7 +1027,7 @@ eventemitter3@1.x.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
 
-eventemitter3@^2.0.0, eventemitter3@^2.0.3:
+eventemitter3@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-2.0.3.tgz#b5e1079b59fb5e1ba2771c0a993be060a58c99ba"
 
@@ -1267,9 +1309,10 @@ graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-gsap@^1.20.3:
-  version "1.20.3"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-1.20.3.tgz#c9a6e7be057cf59417483448f925472fa2f73cd7"
+gsap@2.1.3:
+  version "2.1.3"
+  resolved "https://registry.npm.taobao.org/gsap/download/gsap-2.1.3.tgz#c63ee3a50f0b7dc3b46ed0845bb0f09049feb944"
+  integrity sha1-xj7jpQ8LfcO0btCEW7DwkEn+uUQ=
 
 handle-thing@^1.2.5:
   version "1.2.5"
@@ -1492,9 +1535,10 @@ interpret@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
 
-inversify@^4.5.1:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/inversify/-/inversify-4.5.2.tgz#f2478fd140f398836b2e1fee839f37588f1e6a9b"
+inversify@5.0.1, inversify@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npm.taobao.org/inversify/download/inversify-5.0.1.tgz#500d709b1434896ce5a0d58915c4a4210e34fb6e"
+  integrity sha1-UA1wmxQ0iWzloNWJFcSkIQ40+24=
 
 invert-kv@^1.0.0:
   version "1.0.0"
@@ -1660,9 +1704,10 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
 
-ismobilejs@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/ismobilejs/-/ismobilejs-0.4.1.tgz#1a5f126c70fed39c93da380fa62cbae5723e7dc2"
+ismobilejs@^0.5.1:
+  version "0.5.2"
+  resolved "https://registry.npm.taobao.org/ismobilejs/download/ismobilejs-0.5.2.tgz#e81bacf6187c532ad8348355f4fecd6e6adfdce1"
+  integrity sha1-6Bus9hh8UyrYNINV9P7Nbmrf3OE=
 
 isobject@^2.0.0:
   version "2.1.0"
@@ -2311,22 +2356,24 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-pixi-gl-core@^1.0.3:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/pixi-gl-core/-/pixi-gl-core-1.1.0.tgz#a52cb4dd3254f9c7857a0e9c2356b00e6ec0c761"
+pixi-gl-core@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npm.taobao.org/pixi-gl-core/download/pixi-gl-core-1.1.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpixi-gl-core%2Fdownload%2Fpixi-gl-core-1.1.4.tgz#8b4b5c433b31e419bc379dc565ce1b835a91b372"
+  integrity sha1-i0tcQzsx5Bm8N53FZc4bg1qRs3I=
 
-pixi.js@^4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/pixi.js/-/pixi.js-4.6.1.tgz#8a231f70e529c73bb4c75fbf684b425d7f153a8e"
+pixi.js@4.8.8:
+  version "4.8.8"
+  resolved "https://registry.npm.taobao.org/pixi.js/download/pixi.js-4.8.8.tgz#eb73c94e6ee087fc4566471a20f2357c067f93aa"
+  integrity sha1-63PJTm7gh/xFZkcaIPI1fAZ/k6o=
   dependencies:
     bit-twiddle "^1.0.2"
-    earcut "^2.0.7"
+    earcut "^2.1.4"
     eventemitter3 "^2.0.0"
-    ismobilejs "^0.4.0"
+    ismobilejs "^0.5.1"
     object-assign "^4.0.1"
-    pixi-gl-core "^1.0.3"
+    pixi-gl-core "^1.1.4"
     remove-array-items "^1.0.0"
-    resource-loader "^2.0.9"
+    resource-loader "^2.2.3"
 
 pkg-dir@^2.0.0:
   version "2.0.0"
@@ -2515,9 +2562,10 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-reflect-metadata@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.10.tgz#b4f83704416acad89988c9b15635d47e03b9344a"
+reflect-metadata@0.1.13:
+  version "0.1.13"
+  resolved "https://registry.npm.taobao.org/reflect-metadata/download/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
 
 regex-cache@^0.4.2:
   version "0.4.4"
@@ -2616,9 +2664,10 @@ resolve@^1.3.2:
   dependencies:
     path-parse "^1.0.5"
 
-resource-loader@^2.0.9:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/resource-loader/-/resource-loader-2.0.9.tgz#65d3b50a982e48260bacf835284e1a72d978806d"
+resource-loader@^2.2.3:
+  version "2.2.4"
+  resolved "https://registry.npm.taobao.org/resource-loader/download/resource-loader-2.2.4.tgz#9bf43dba59475d56be29c796399211ce0e96fd2d"
+  integrity sha1-m/Q9ullHXVa+KceWOZIRzg6W/S0=
   dependencies:
     mini-signals "^1.1.1"
     parse-uri "^1.0.0"
@@ -2979,6 +3028,11 @@ ts-loader@^3.1.1:
     enhanced-resolve "^3.0.0"
     loader-utils "^1.0.2"
     semver "^5.0.1"
+
+tslib@^1.10.0, tslib@^1.9.3:
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
+  integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
 
 tslib@^1.7.1:
   version "1.7.1"
