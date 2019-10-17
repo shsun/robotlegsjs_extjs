@@ -54,7 +54,7 @@ export class HomeView extends Container {
         startButton.x = ViewPortSize.HALF_WIDTH;
         startButton.y = ViewPortSize.MAX_HEIGHT * 0.7;
         this.addChild(startButton);
-        startButton.addEventListener('click', Delegate.create(this.startButton_onClick, {'a':'123', 'b':'456'}));
+        startButton.addEventListener('click', Delegate.create(this, this.startButton_onClick, {'a':'123', 'b':'456'}));
 
         //startButton.addEventListener('click', this.startButton_onClick, this);
 
