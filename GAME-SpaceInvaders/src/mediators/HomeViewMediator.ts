@@ -51,12 +51,14 @@ export class HomeViewMediator extends SignalMediator<HomeView> {
         this.flowService.setOptionsView();
     }
 
-    _onStartGame = (data: Object, ...restArgs: Object[]) => {
+    _onStartGame = (data: Object, additionalOpts:Object) => {
         console.log('_onStartGame-s');
         console.log(JSON.stringify(data));
-        console.log(restArgs.length);
+        //console.log(restArgs.length);
 
-        console.log(JSON.stringify(restArgs[0]));
+//        console.log(JSON.stringify(restArgs[0]));
+
+        console.log(JSON.stringify(additionalOpts));
 
 
         console.log('_onStartGame-e');
