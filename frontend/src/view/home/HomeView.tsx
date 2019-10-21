@@ -18,7 +18,7 @@ export default class HomeView extends React.Component<void, any> {
     render() {
 
 
-        let list: Array<ReactNode> = new Array<ReactNode>();
+        let additionalColumnList: Array<ReactNode> = new Array<ReactNode>();
 
 
         var b: Boolean = true;
@@ -30,7 +30,7 @@ export default class HomeView extends React.Component<void, any> {
                 flex={2}
                 resizable
             />;
-            list.push(a);
+            additionalColumnList.push(a);
         }
 
 
@@ -80,7 +80,7 @@ export default class HomeView extends React.Component<void, any> {
                 />
 
 
-                {list}
+                {additionalColumnList}
 
 
             </Grid>
