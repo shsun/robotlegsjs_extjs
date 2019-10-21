@@ -16,13 +16,9 @@ export default class HomeView extends React.Component<void, any> {
     });
 
     render() {
-
-
+        
         let additionalColumnList: Array<ReactNode> = new Array<ReactNode>();
-
-
         var b: Boolean = true;
-
         if (b) {
             var a: ReactNode = <Column
                 text="Phone2"
@@ -78,11 +74,7 @@ export default class HomeView extends React.Component<void, any> {
                     flex={2}
                     resizable
                 />
-
-
                 {additionalColumnList}
-
-
             </Grid>
         );
 
