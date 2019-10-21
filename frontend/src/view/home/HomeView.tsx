@@ -16,7 +16,7 @@ export default class HomeView extends React.Component<void, any> {
     });
 
     render() {
-        
+
         let additionalColumnList: Array<ReactNode> = new Array<ReactNode>();
         var b: Boolean = true;
         if (b) {
@@ -28,8 +28,7 @@ export default class HomeView extends React.Component<void, any> {
             />;
             additionalColumnList.push(a);
         }
-
-
+        
         let node: ReactNode = (
             <Grid store={this.store}>
                 <Toolbar docked="top">
