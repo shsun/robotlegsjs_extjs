@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Grid, Toolbar, Column, SearchField } from '@sencha/ext-modern';
 import data from './data';
-import { small, medium } from '../responsiveFormulas';
+import { small, medium } from '../../responsiveFormulas';
 
 declare var Ext:any;
 
-export default class Home extends React.Component<void, any> {
+export default class HomeView extends React.Component<void, any> {
 
     query: any
 

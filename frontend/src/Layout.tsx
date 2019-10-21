@@ -2,9 +2,11 @@ import * as React from 'react'
 import { Container, TitleBar, Button, Sheet, Panel } from '@sencha/ext-modern';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { medium, large } from './responsiveFormulas';
-import Home from './Home/Home';
-import About from './About/About';
+
+import HomeView from './view/home/HomeView';
+import About from './view/about/AboutView';
 import NavMenu from './NavMenu';
+
 var REACT_VERSION:any = require('react').version
 declare var Ext:any;
 
@@ -80,7 +82,7 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
                     </Panel>
                 )}
                 <Switch>
-                    <Route path="/" component={Home} exact/>
+                    <Route path="/" component={HomeView} exact/>
                     <Route path="/about" component={About}/>
                 </Switch>
             </Container>

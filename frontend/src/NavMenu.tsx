@@ -28,8 +28,8 @@ const NavMenu: React.SFC<NavMenuProps & any> = ({
         store={{
             root: {
                 children: [
-                    { id: '/', text: 'Home', iconCls: 'x-fa fa-home', leaf: true },
-                    { id: '/about', text: 'About', iconCls: 'x-fa fa-info', leaf: true },
+                    { id: '/', text: 'HomeView', iconCls: 'x-fa fa-home', leaf: true },
+                    { id: '/about', text: 'AboutView', iconCls: 'x-fa fa-info', leaf: true },
                 ]
             }
         }}

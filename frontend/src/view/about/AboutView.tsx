@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Container } from '@sencha/ext-modern';
-import { ActionSheetProps } from '../../modern';
-import { ContainerProps } from '../../modern';
+import { ActionSheetProps } from '../../../modern';
+import { ContainerProps } from '../../../modern';
 
-export default function About() {
+export default function AboutView() {
     var a: ActionSheetProps = {};
     a.activeChildTabIndex = 1;
     console.dir(a);
