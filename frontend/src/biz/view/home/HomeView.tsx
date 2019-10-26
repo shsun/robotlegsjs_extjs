@@ -35,7 +35,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
 
     // -----------------------------------------------------------------------------------------------------------------
 
-    query: any;
+    //query: any;
 
     store = Ext.create('Ext.data.Store', {
         fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
@@ -77,7 +77,6 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                 <Toolbar docked="top">
                     <SearchField
                         ui="faded"
-                        ref={field => this.query = field}
                         placeholder="Search..."
                         onChange={XDelegate.create(this, this.onSearchFieldChange, {name: 'zhangsan', age: 99})}
                         responsiveConfig={{
@@ -140,15 +139,14 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
      * @param additionalOpts
      */
     onSearchFieldChange = (sender: any, newValue: String, oldValue: String, eOpts: Object, additionalOpts: Object) => {
-        const query = this.query.cmp.getValue().toLowerCase();
         this.store.clearFilter();
 
-        if (query.length) this.store.filterBy(record => {
+        if (newValue.length) this.store.filterBy(record => {
             const {name, email, phone} = record.data;
 
-            return name.toLowerCase().indexOf(query) !== -1 ||
-                email.toLowerCase().indexOf(query) !== -1 ||
-                phone.toLowerCase().indexOf(query) !== -1;
+            return name.toLowerCase().indexOf(newValue) !== -1 ||
+                email.toLowerCase().indexOf(newValue) !== -1 ||
+                phone.toLowerCase().indexOf(newValue) !== -1;
         });
     }
 
