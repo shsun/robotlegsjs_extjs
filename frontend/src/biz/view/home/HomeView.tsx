@@ -59,11 +59,9 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
         console.log(this.TAG + '.render() UUID=' + this.UUID);
 
         let additionalColumnList: Array<ReactNode> = new Array<ReactNode>();
-        var b: Boolean = this.state.displayPhone2;
-        console.log(this.TAG + '.render--' + b);
 
-
-        if (b) {
+        console.log(this.TAG + '.render--' + this.state.displayPhone2);
+        if (this.state.displayPhone2) {
             var a: ReactNode = <Column
                 text="Phone2"
                 dataIndex="phone2"
@@ -123,7 +121,6 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                 {additionalColumnList}
             </Grid>
         );
-
 
         return node;
     }
