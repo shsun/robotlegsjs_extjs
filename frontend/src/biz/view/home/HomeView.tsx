@@ -75,7 +75,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
             }
         }
 
-        let node: ReactNode = (
+        const node: ReactNode = (
             <Grid key={this.UUID} store={this.store}>
                 <Toolbar docked="top">
                     <SearchField
