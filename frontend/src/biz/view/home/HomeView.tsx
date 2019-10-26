@@ -79,7 +79,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                         ui="faded"
                         ref={field => this.query = field}
                         placeholder="Search..."
-                        onChange={this.onSearch.bind(this, {blood:'c'})}
+                        onChange={this.onSearch.bind(this, [{blood:'c'}])}
                         responsiveConfig={{
                             [small]: {
                                 flex: 1
