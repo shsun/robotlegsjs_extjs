@@ -28,7 +28,7 @@ export default class HomeView extends React.Component<void, any> {
             />;
             additionalColumnList.push(a);
         }
-        
+
         let node: ReactNode = (
             <Grid store={this.store}>
                 <Toolbar docked="top">

@@ -30,3 +30,9 @@ You can also run and serve a production build using:
     npm run build
     npm run prod
 
+
+
+
+sencha --sdk /usr/local/ext-7.0.0.156/ generate app --template /usr/local/ext-7.0.0.156/templates/admin-dashboard/ Admin ./Admin;
+
+sencha --sdk /usr/local/ext-7.0.0.156/ generate app classic --template /usr/local/ext-7.0.0.156/templates/admin-dashboard/ Admin ./Admin;
