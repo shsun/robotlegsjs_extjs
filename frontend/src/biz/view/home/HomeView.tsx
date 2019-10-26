@@ -43,9 +43,6 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-
-    //query: any;
-
     store = Ext.create('Ext.data.Store', {
         fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
         data
