@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ReactNode, ErrorInfo} from "react";
 
-import {ExtReact, Container, Button, Event} from '@sencha/ext-react';
+import {ExtReact, Container, Button, Event, TextField} from '@sencha/ext-react';
 import {Grid, Toolbar, Column, SearchField} from '@sencha/ext-modern';
 
 import {XDelegate} from "../../../base/utils/XDelegate";
@@ -30,7 +30,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
     TAG: String;
 
     state = {
-        displayPhone2: false
+        displayPhone2: true
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                         ui="faded"
                         ref={field => this.query = field}
                         placeholder="Search..."
-                        onChange={this.onSearch.bind(this, [{blood:'c'}])}
+                        onChange={XDelegate.create(this, this.onSearch, {name: 'zhangsan', age: 99})}
                         responsiveConfig={{
                             [small]: {
                                 flex: 1
@@ -132,7 +132,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
     /**
      * Filter the store when the user types in the search box
      */
-    onSearch = () => {
+    onSearch = (sender: any, newValue: String, oldValue: String, eOpts: Object, additionalOpts: Object) => {
         const query = this.query.cmp.getValue().toLowerCase();
         this.store.clearFilter();
 
@@ -151,7 +151,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
      * @param {Ext.event.Event} e
      * @param restOfArgs
      */
-    onOkButtonRelease = (sender: Button, e: Event, additionalOpts: Object) => {
+    onOkButtonRelease = (sender: any, e: Event, additionalOpts: Object) => {
         let name: String = additionalOpts['name'];
         this.setState({displayPhone2: false});
         console.log('a', name);
