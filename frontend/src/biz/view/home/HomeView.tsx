@@ -1,8 +1,12 @@
 import * as React from 'react';
+import { ExtReact, Container, Button, Event} from '@sencha/ext-react';
+
 import {Grid, Toolbar, Column, SearchField} from '@sencha/ext-modern';
 import data from './data';
 import {small, medium} from '../../../responsiveFormulas';
 import {ReactNode} from "react";
+import {XDelegate} from "../../../base/utils/XDelegate";
+
 
 declare var Ext: any;
 
@@ -28,7 +32,7 @@ export default class HomeView extends React.Component<void, any> {
             />;
             additionalColumnList.push(a);
         }
-
+        
         let node: ReactNode = (
             <Grid store={this.store}>
                 <Toolbar docked="top">
@@ -45,6 +49,11 @@ export default class HomeView extends React.Component<void, any> {
                                 flex: undefined
                             }
                         }}
+                    />
+                    <Button
+                        text="ok"
+                        handler={XDelegate.create(this, this.onOkButtonRelease, {name:'zhangsan', age:99})}
+                        ui="action raised"
                     />
                 </Toolbar>
                 <Column
@@ -96,4 +105,21 @@ export default class HomeView extends React.Component<void, any> {
         });
     }
 
+    /**
+     *
+     * @param {Button} sender
+     * @param {Ext.event.Event} e
+     * @param restOfArgs
+     */
+    onOkButtonRelease = (sender: Button, e: Event, additionalOpts: Object) => {
+
+        let name:String = additionalOpts['name'];
+
+        let a:Button = (sender as Button);
+
+
+
+        console.log('a', name);
+
+    }
 }
