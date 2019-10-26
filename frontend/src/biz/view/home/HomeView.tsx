@@ -79,7 +79,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                         ui="faded"
                         ref={field => this.query = field}
                         placeholder="Search..."
-                        onChange={XDelegate.create(this, this.onSearch, {name: 'zhangsan', age: 99})}
+                        onChange={XDelegate.create(this, this.onSearchFieldChange, {name: 'zhangsan', age: 99})}
                         responsiveConfig={{
                             [small]: {
                                 flex: 1
@@ -91,7 +91,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                     />
                     <Button
                         text="ok"
-                        handler={XDelegate.create(this, this.onOkButtonRelease, {name: 'zhangsan', age: 99})}
+                        handler={XDelegate.create(this, this.onOkButtonClick, {name: 'zhangsan', age: 99})}
                         ui="action raised"
                     />
                 </Toolbar>
@@ -129,10 +129,17 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
         return node;
     }
 
+
     /**
      * Filter the store when the user types in the search box
+     *
+     * @param sender
+     * @param newValue
+     * @param oldValue
+     * @param {Object} eOpts The options object passed to Ext.util.Observable.addListener.
+     * @param additionalOpts
      */
-    onSearch = (sender: any, newValue: String, oldValue: String, eOpts: Object, additionalOpts: Object) => {
+    onSearchFieldChange = (sender: any, newValue: String, oldValue: String, eOpts: Object, additionalOpts: Object) => {
         const query = this.query.cmp.getValue().toLowerCase();
         this.store.clearFilter();
 
@@ -151,7 +158,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
      * @param {Ext.event.Event} e
      * @param restOfArgs
      */
-    onOkButtonRelease = (sender: any, e: Event, additionalOpts: Object) => {
+    onOkButtonClick = (sender: any, e: Event, additionalOpts: Object) => {
         let name: String = additionalOpts['name'];
         this.setState({displayPhone2: false});
         console.log('a', name);
