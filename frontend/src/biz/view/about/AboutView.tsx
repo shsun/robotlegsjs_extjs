@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container } from '@sencha/ext-modern';
-import { ActionSheetProps } from '../../../modern';
-import { ContainerProps } from '../../../modern';
+import { ActionSheetProps } from '../../../../modern';
+import { ContainerProps } from '../../../../modern';
 
 export default function AboutView() {
     var a: ActionSheetProps = {};

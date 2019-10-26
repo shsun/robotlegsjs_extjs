@@ -3,8 +3,8 @@ import { Container, TitleBar, Button, Sheet, Panel } from '@sencha/ext-modern';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { medium, large } from './responsiveFormulas';
 
-import HomeView from './view/home/HomeView';
-import About from './view/about/AboutView';
+import HomeView from './biz/view/home/HomeView';
+import About from './biz/view/about/AboutView';
 import NavMenu from './NavMenu';
 
 var REACT_VERSION:any = require('react').version

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Grid, Toolbar, Column, SearchField} from '@sencha/ext-modern';
 import data from './data';
-import {small, medium} from '../../responsiveFormulas';
+import {small, medium} from '../../../responsiveFormulas';
 import {ReactNode} from "react";
 
 declare var Ext: any;
