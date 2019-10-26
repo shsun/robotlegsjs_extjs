@@ -4,7 +4,7 @@ import {ReactNode, ErrorInfo} from "react";
 import {ExtReact, Container, Button, Event, TextField} from '@sencha/ext-react';
 
 //import {Grid, Toolbar, Column, SearchField} from '@sencha/ext-modern';
-import { Panel, Grid, Column, Toolbar, SearchField, Field } from '@sencha/ext-classic';
+import {Panel, Grid, Column, Toolbar, SearchField, Field} from '@sencha/ext-classic';
 
 
 import {XDelegate} from "../../../base/utils/XDelegate";
@@ -28,7 +28,8 @@ interface HomeViewProps {
 }
 
 interface HomeViewState {
-    displayPhone2: boolean
+    displayPhone2: boolean,
+    SearchFieldWidth: Number
 }
 
 export default class HomeView extends React.Component<HomeViewProps, HomeViewState> {
@@ -39,7 +40,8 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
     TAG: String;
 
     state = {
-        displayPhone2: true
+        displayPhone2: true,
+        SearchFieldWidth: 200
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -86,6 +88,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                 <Toolbar docked="top">
                     <SearchField
                         ui="faded"
+                        width={this.state.SearchFieldWidth}
                         placeholder="Search..."
                         onChange={XDelegate.create(this, this.onSearchFieldChange, {name: 'zhangsan', age: 99})}
                         responsiveConfig={{
@@ -172,6 +175,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
         this.setState({displayPhone2: false});
         console.log('a', name);
 
+        this.setState({SearchFieldWidth: 600});
 
         Ext.toast('a');
     }
