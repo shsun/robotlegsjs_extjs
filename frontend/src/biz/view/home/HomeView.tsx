@@ -58,18 +58,23 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
     render() {
         console.log(this.TAG + '.render() UUID=' + this.UUID);
 
-        let additionalColumnList: Array<ReactNode> = new Array<ReactNode>();
-
         console.log(this.TAG + '.render--' + this.state.displayPhone2);
+
+        let additionalColumnList: Array<ReactNode> = new Array<ReactNode>();
         if (this.state.displayPhone2) {
-            var a: ReactNode = <Column
-                text="Phone2"
-                dataIndex="phone2"
-                flex={2}
-                resizable
-            />;
-            additionalColumnList.push(a);
+            for (var i = 0; i < 3; i++) {
+                var tmpText = "phone" + i;
+                var tmpDataIndex = "phone" + i;
+                var a: ReactNode = <Column
+                    text={tmpText}
+                    dataIndex={tmpDataIndex}
+                    flex={2}
+                    resizable
+                />;
+                additionalColumnList.push(a);
+            }
         }
+
         let node: ReactNode = (
             <Grid key={this.UUID} store={this.store}>
                 <Toolbar docked="top">
