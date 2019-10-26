@@ -2,16 +2,25 @@ import * as React from 'react';
 import {ReactNode, ErrorInfo} from "react";
 
 import {ExtReact, Container, Button, Event, TextField} from '@sencha/ext-react';
-import {Grid, Toolbar, Column, SearchField} from '@sencha/ext-modern';
+
+//import {Grid, Toolbar, Column, SearchField} from '@sencha/ext-modern';
+import { Panel, Grid, Column, Toolbar, SearchField, Field } from '@sencha/ext-classic';
+
 
 import {XDelegate} from "../../../base/utils/XDelegate";
 
 import data from './data';
 import {small, medium} from '../../../responsiveFormulas';
 
-
 declare var Ext: any;
 
+Ext.require([
+    'Ext.grid.Grid',
+    'Ext.event.Event',
+    'Ext.Toast',
+    'Ext.grid.plugin.*',
+    'Ext.exporter.*'
+]);
 
 interface HomeViewProps {
     history: any,
@@ -75,7 +84,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
             }
         }
 
-        const node: ReactNode = (
+        const node: React.ReactChild = (
             <Grid key={this.UUID} store={this.store}>
                 <Toolbar docked="top">
                     <SearchField
@@ -127,6 +136,9 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
             </Grid>
         );
 
+
+        //var g = (node as Ext.grid.Grid);
+
         return node;
     }
 
@@ -162,6 +174,9 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
         let name: String = additionalOpts['name'];
         this.setState({displayPhone2: false});
         console.log('a', name);
+
+
+        Ext.toast('a');
     }
 
 
