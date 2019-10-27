@@ -193,12 +193,15 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
             var id:string = sender.getId();
 
 
-            var c = Ext.getCmp(id);
+            var c:Button = Ext.getCmp(id) as Button;
 
             var btn:Button = (sender as Button);
 
 
             console.log('btn 21--' + c.getText());
+            console.log('btn 21--' + btn.getText());
+
+            
 
             let w1:number = c.getWidth();
             let x1:number = c.getX();
@@ -212,10 +215,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
             let w3:number = c.width;
             let x3:number = c.x;
             console.log('btn 24');
-
         }
-
-
         Ext.toast('a');
     }
 
