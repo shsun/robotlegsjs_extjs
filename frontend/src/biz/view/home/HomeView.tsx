@@ -15,6 +15,7 @@ import {small, medium} from '../../../responsiveFormulas';
 declare var Ext: any;
 
 Ext.require([
+    'Ext.button.Button',
     'Ext.grid.Grid',
     'Ext.event.Event',
     'Ext.Toast',
@@ -193,15 +194,15 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
             var id:string = sender.getId();
 
 
-            var c:Button = Ext.getCmp(id) as Button;
+            var c = Ext.getCmp(id);
 
             var btn:Button = (sender as Button);
 
 
+            console.log('btn 21--' + c.getZIndex());
             console.log('btn 21--' + c.getText());
             console.log('btn 21--' + btn.getText());
 
-            
 
             let w1:number = c.getWidth();
             let x1:number = c.getX();
