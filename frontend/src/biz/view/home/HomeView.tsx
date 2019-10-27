@@ -50,11 +50,17 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
         data
     });
 
+
+    clickTimes:number = 0;
+
     constructor(props: Readonly<HomeViewProps>) {
         super(props);
 
         this.UUID = require('uuid/v1')();
         this.TAG = this.constructor.name;
+
+
+        this.clickTimes = 0;
 
         console.log(this.TAG);
     }
@@ -102,6 +108,7 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
                     />
                     <Button
                         text="ok"
+                        width='100%'
                         handler={XDelegate.create(this, this.onOkButtonClick, {name: 'zhangsan', age: 99})}
                         ui="action raised"
                     />
@@ -172,10 +179,42 @@ export default class HomeView extends React.Component<HomeViewProps, HomeViewSta
      */
     onOkButtonClick = (sender: any, e: Event, additionalOpts: Object) => {
         let name: String = additionalOpts['name'];
-        this.setState({displayPhone2: false});
-        console.log('a', name);
 
-        this.setState({SearchFieldWidth: 600});
+
+        this.clickTimes += 1;
+
+        if (this.clickTimes == 1) {
+            this.setState({displayPhone2: false});
+            console.log('a', name);
+
+            this.setState({SearchFieldWidth: 600});
+        } else {
+
+            var id:string = sender.getId();
+
+
+            var c = Ext.getCmp(id);
+
+            var btn:Button = (sender as Button);
+
+
+            console.log('btn 21--' + c.getText());
+
+            let w1:number = c.getWidth();
+            let x1:number = c.getX();
+
+            console.log('btn 22');
+
+            let w2:number = c['getWidth']();
+            let x2:number = c['getX']();
+            console.log('btn 23');
+
+            let w3:number = c.width;
+            let x3:number = c.x;
+            console.log('btn 24');
+
+        }
+
 
         Ext.toast('a');
     }
